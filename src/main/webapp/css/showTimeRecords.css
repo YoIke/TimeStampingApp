@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.weekend {
+    background-color: #e0e0e0;
+}
+
+/* エラー判定による背景色変更 */
+.incomplete {
+    background-color: #ffcdd2;
+}
+
+tr:hover {
+    outline: 2px solid orange;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.year-month-selector, .csv-export {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    background-color: #576370;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #576370;
+}
+
+button:active {
+    background-color: #576370;
+}
+
+.styled-select {
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 6px 12px;
+    background-color: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.styled-select:focus {
+    outline: none;
+    border-color: #576370;
+}
+
+.year-selector {
+    margin-bottom: 10px;
+}

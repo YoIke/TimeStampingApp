@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Time Records</title>
+    <link rel="stylesheet" href="css/showTimeRecords.css">
+</head>
+<body>
+#parse("header.html")
+<div class="container">
+    <div class="header">
+        <h1>${user.realname}さんの ${yearMonth.year}年 ${yearMonth.monthValue}月 の打刻履歴</h1>
+    </div>
+
+    <div class="button-container">
+        <div>
+
+            <div class="year-selector">
+                <select id="year" name="year" onchange="changeYear()" class="styled-select">
+                    <!-- 適切な年範囲に変更してください -->
+                    #foreach($year in [2020..2030])
+                    <option value="$year" #if($year== $yearMonth.year) selected #end>$year</option>
+                    #end
+                </select>
+            </div>
+
+            <div class="month-selector">
+                #foreach($month in [1..12])
+                <button type="button" onclick="changeMonth($month)" #if($month== $yearMonth.monthValue) class="selected"
+                        #end>
+                    $month
+                </button>
+                #end
+            </div>
+
+            <form action="show" method="get" id="yearMonthForm" style="display:none;">
+                <input type="hidden" id="yearInput" name="year" value="${yearMonth.year}">
+                <input type="hidden" id="monthInput" name="month" value="${yearMonth.monthValue}">
+            </form>
+        </div>
+        <form action="export/csv" method="get">
+            <input type="hidden" name="year" value="${yearMonth.year}">
+            <input type="hidden" name="month" value="${yearMonth.monthValue}">
+            <button type="submit">CSVエクスポート</button>
+        </form>
+    </div>
+    <table>
+        <tr>
+            <th>日付</th>
+            <th>出勤時刻</th>
+            <th>退勤時刻</th>
+            <th>勤務時間</th>
+        </tr>
+        #foreach($entry in $groupedRecords)
+        <tr>
+            <td class="$entry.rowClass">$entry.date</td>
+            <td class="#if($entry.incomplete) incomplete #end">$!entry.arrivalTime</td>
+            <td class="#if($entry.incomplete) incomplete #end">$!entry.leaveTime</td>
+            <td class="#if($entry.incomplete) incomplete #end">$!entry.workingHours</td>
+        </tr>
+        #end
+    </table>
+</div>
+
+<script>
+    function changeYear() {
+        const yearInput = document.getElementById("year");
+        const selectedYear = yearInput.value;
+        document.getElementById("yearInput").value = selectedYear;
+        document.getElementById("yearMonthForm").submit();
+    }
+
+    function changeMonth(selectedMonth) {
+        document.getElementById("monthInput").value = selectedMonth;
+        document.getElementById("yearMonthForm").submit();
+    }
+</script>
+
+</body>
+</html>

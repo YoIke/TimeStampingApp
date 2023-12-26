@@ -1,0 +1,14 @@
+<web-app>
+    <context-param>
+        <param-name>dbUrl</param-name>
+        <param-value>jdbc:postgresql://localhost:5432/postgres</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbUsername</param-name>
+        <param-value>postgres</param-value>
+    </context-param>
+    <context-param>
+        <param-name>dbPassword</param-name>
+        <param-value>1105</param-value>
+    </context-param>
+</web-app>

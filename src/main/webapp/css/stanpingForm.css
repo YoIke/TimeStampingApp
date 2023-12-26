@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.row p {
+    text-align: right;
+}
+
+.attendance-button,
+.leave-button {
+    font-size: 24px;
+    padding: 20px 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.attendance-button {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.leave-button {
+    background-color: #e75651;
+    color: #fff;
+}
+
+#attendanceResult {
+    font-size: 18px;
+    text-align: left;
+    margin: 10px;
+}
+
+/* リセット */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#timecard-link {
+    display: inline-block;
+    padding: 8px 18px;
+    border: 2px solid #333;
+    background-color: #fff;
+    color: #333;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+}
+
+#timecard-link:hover {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.table-wrapper {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#attendanceTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+#attendanceTable thead th {
+    border-bottom: 2px solid #333;
+    background-color: #f3f3f3;
+    padding: 10px;
+}
+
+#attendanceTable tbody td {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+#attendanceTable tbody tr {
+    text-align: center;
+}
+
+/* 必要なスタイルを追加 */
+.header {
+    justify-content: center;
+}
+
+.row {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.table-wrapper {
+    margin-top: 20px;
+}
+

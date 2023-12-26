@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>打刻画面</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="css/stanpingForm.css">
+</head>
+<body>
+#parse("header.html")
+<div class="container">
+    <div class="header">
+        <h2>$user.realnameさんログイン中</h2>
+    </div>
+    <div class="row">
+        <div id="datetimePicker" class="calendar"></div>
+        <div class="buttons-container">
+            <form action="record" method="post" id="recordForm">
+                <div>
+                    <input type="hidden" name="date" id="selectedDate"/>
+                    <input type="hidden" name="type" id="selectedType"/>
+                </div>
+                <div>
+                    <button type="submit" class="attendance-button" onclick="setSelectedType(1);">出勤</button>
+                </div>
+                <div>
+                    <button type="submit" class="leave-button" onclick="setSelectedType(0);">退勤</button>
+                </div>
+                <a href="show" id="timecard-link">タイムカード</a>
+            </form>
+        </div>
+    </div>
+    <br>
+    <div class="table-wrapper">
+        <table id="attendanceTable">
+            <thead>
+            <tr>
+                <th>種別</th>
+                <th>時刻</th>
+            </tr>
+            </thead>
+            <tbody id="attendanceResult">
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <p id="errorMessage"></p>
+</div>
+
+<script>
+    var now = '$now';
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/ja.js"></script>
+<script src="stampingForm.js"></script>
+</body>
+</html>

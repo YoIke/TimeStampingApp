@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/login.css">
+    <title>ログインフォーム</title>
+    <link rel="icon" href="images/favicon.ico" sizes="any">
+
+</head>
+<body>
+<div class="login-card">
+    <div class="card-header">
+        <div class="log"><img alt="" src="images/logo.png" width="50" height="50">打刻管理システム</div>
+    </div>
+    <form action="login" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input required="" name="username" id="username" type="text"/>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input required="" name="password" id="password" type="password"/>
+        </div>
+        <div class="form-group">
+            <input value="Login" type="submit"/>
+        </div>
+        <a href="createUser">アカウントの新規作成</a>
+    </form>
+</div>
+
+</body>
+</html>
